@@ -1,4 +1,4 @@
-<center>![Logo](http://www.tisv.cn/img/logo7.png)</center>
+![Logo](http://www.tisv.cn/img/logo.png)
 
 --------------------------------------------------------------------------------
 
