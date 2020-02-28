@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 
 
-[![Build Status](https://ci.pytorch.org/jenkins/job/pytorch-master/badge/icon)](http://www.tisv.cn/) [![GitHub stars](http://www.tisv.cn/img/givemeastar.png)](https://github.com/AITutorials/)
+[![Build Status](http://www.tisv.cn/img/badge.svg)](http://www.tisv.cn/) [![GitHub stars](http://www.tisv.cn/img/givemeastar.png)](https://github.com/AITutorials/)
 
 
 
@@ -81,5 +81,17 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 QQ 音乐是腾讯音乐娱乐集团推出的网络音乐平台，拥有超过 8 亿的用户，是中国互联网领域领先的正版数字音乐服务的领先平台，同时也是一款免费的音乐播放器，始终走在音乐潮流最前端，向广大用户提供方便流畅的在线音乐和丰富多彩的音乐社区服务。		
 
 **[点击查看]()**
+
+---
+
+
+## 其他资源
+
+* [Dataset(集成世界范围内重要AI技术解决方案)](https://github.com/AITutorials/dataset)
+
+* [Examples(展示AI实战教程中的示例)](https://github.com/AITutorials/examples)
+
+* [Cooperation(寻求更多资源与合作伙伴)](https://github.com/AITutorials/cooperation)
+
 
 ---
