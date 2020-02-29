@@ -87,7 +87,7 @@ QQ 音乐是腾讯音乐娱乐集团推出的网络音乐平台，拥有超过 8
 
 ## 其他资源
 
-* [Dataset(集成世界范围内的免费数据集和数据站点)](https://github.com/AITutorials/dataset)
+* [Dataset(集成世界范围内的免费数据集和数据站点)](https://github.com/AITutorials/datasets)
 
 * [Examples(展示AI实战教程中的示例)](https://github.com/AITutorials/examples)
 
