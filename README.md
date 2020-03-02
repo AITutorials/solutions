@@ -1,7 +1,5 @@
 ![Logo](http://www.tisv.cn/img/logo.png)
 
---------------------------------------------------------------------------------
-
 
 [![Build Status](http://www.tisv.cn/img/badge.svg)](http://www.tisv.cn/) 
 
@@ -99,5 +97,16 @@ QQ 音乐是腾讯音乐娱乐集团推出的网络音乐平台，拥有超过 8
 
 * [Cooperation(寻求更多资源与合作伙伴)](https://github.com/AITutorials/cooperation)
 
+
+---
+
+### 致谢
+
+感谢以下机构或站点提供的人工智能工具和参考学习资料。
+
+
+| [![avatar](http://ai.tisv.cn/img/book11.png)](https://livebook.manning.com/book/deep-learning-with-python/) | [![avatar](https://i.loli.net/2020/03/02/BamPRHhlubEe672.png)](https://www.deeplearningbook.org/contents/TOC.html) | [![avatar](http://ai.tisv.cn/img/book13.png)](http://neuralnetworksanddeeplearning.com/)|
+| ---- | ---- | ---- |
+| [![avatar](http://ai.tisv.cn/img/t1.png)](https://tensorflow.google.cn/) |  [![avatar](http://ai.tisv.cn/img/t2.png)](https://pytorch.org/) | [![avatar](http://ai.tisv.cn/img/t3.png)](https://keras.io/) |
 
 ---
