@@ -87,7 +87,7 @@ QQ 音乐是腾讯音乐娱乐集团推出的网络音乐平台，拥有超过 8
 
 * [Examples(展示AI实战教程中的示例)](https://github.com/AITutorials/examples)
 
-* [Cooperation(寻求更多资源与合作伙伴)](https://github.com/AITutorials/cooperation)
+* [Papers(解析来自SOTA的高品质AI论文)](https://github.com/AITutorials/cooperation)
 
 
 ---
