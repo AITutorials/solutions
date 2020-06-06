@@ -9,7 +9,7 @@ QQ 音乐曲库数量庞大，怎样有效智能的管理曲库，最大化利�
 ---
 
 
-<center> ![pic](./img/QQ1.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ1.jpeg)
 
 
 ---
@@ -83,7 +83,7 @@ def audio_dataset_from_fileslist(path=None, num_parallel_calls=4, gt_rate=16000)
 > * 针对音乐所表达出的多样性，根据具体分类场景提出结合基于音频内容和基于歌词内容的融合的分类系统，提升音频分类的精确度，如下图为基于音频内容分类系统框图；
 
 
-<center> ![pic](./img/QQ2.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ2.png)
 
 ---
 
@@ -99,7 +99,7 @@ def audio_dataset_from_fileslist(path=None, num_parallel_calls=4, gt_rate=16000)
 声伴分离，也常称为歌声分离（Singing Voice Separation），是一种将人声（Vocal）和伴奏（Accompany）分开的技术。我们可定义声伴分离模型为：给定 V + A = M，以及 V 和 A 的一些先验信息，求解出 V 和 A。信号不但可以叠加增强，还可以抵消抑制，因此这里的加号 “+” 只表示 V 和 A 的关系，而不表示数学运算符加法，如下图为频域看声伴分离。
 
 
-<center> ![pic](./img/QQ4.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ4.png)
 
 
 把人声和伴奏分离有哪些应用？在曲库中，声伴分离具有广泛的应用场景，包括但不限于以下几种：
@@ -108,12 +108,12 @@ def audio_dataset_from_fileslist(path=None, num_parallel_calls=4, gt_rate=16000)
 > * 结合 ASR 技术进行歌词生成，歌词对齐，自动生成音乐时间戳 QRC 歌词文件，如下图为该技术生成的歌词时间戳 demo 展示；
 
 
-<center> ![pic](./img/QQ5.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ5.png)
 
 
 声伴分离是音频领域里一个比较热门的研究领域，利用丰富的曲库资源：大量纯净的伴奏和人声作为原始数据集进行训练，网络主要使用 Encoder-Decoder 结构的 Hourglass 的模型进行建模，如下图所示，输入特征为 STFT 对数幅度谱，模型的输出并不直接输出伴奏或者人声，而是输出其频谱理想浮值掩蔽（IRM，Ideal Ratio Mask），然后与原始信号频谱特征相乘即可得到想要的伴奏或者人声。 
 
-<center> ![pic](./img/QQ6.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ6.png)
 
 ---
 
@@ -132,7 +132,7 @@ def audio_dataset_from_fileslist(path=None, num_parallel_calls=4, gt_rate=16000)
 为了减少人工标注成本使用第二种标注方式：弱标注，首先构建卷积循环神经网络（Convolutional Recurrent Neural Network，CRNN）模型结构：CNN+RNN，然后采用多实例学习（multiple instance learning）来解决存在和不存在标注的 SED 问题，进而得出逐帧的预测结果，最后采用多种融合手段将逐帧预测转换为逐片段预测，进而得出该片段是否包含特定缺陷，遍历整首歌曲即可得出该歌曲是否含有缺陷，最后使用 TensorFlow Serving 部署进行全库扫描。
 
 
-<center>![pic](./img/QQ7.jpeg)</center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ7.jpeg)
 
 ---
 
@@ -148,12 +148,12 @@ def audio_dataset_from_fileslist(path=None, num_parallel_calls=4, gt_rate=16000)
 
 提取时-频特征：STFT 线性幅度谱，经过 CRNN 模型，整个模型训练框图如下图所示：
 
-<center>![pic](./img/QQ8.jpeg)</center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ8.jpeg)
 
 需要注意的是模型的输出为频谱理想浮值掩蔽（IRM，Ideal Ratio Mask）, 该 IRM 也称为时-频掩膜（Time-frequency Masking），如下图所示，即预测一个乘性的时-频掩膜，与输入的时-频特征相乘，得到预测的时-频特征，即将预测得到的 IRM 与源信号的幅度谱进行相乘即可得到干净的幅度谱，达到去噪的效果，针对音质进行修复。目前考虑算法的实时性，仅考虑了 STFT 变换后的复数谱的强度信息，未考虑相位信息，但是业界研究者也逐步认识到相位预测的重要性，通过扩展掩膜的值域，提出了一些关注相位信息的掩膜方法，如 Phase Sensitive Mask（PSM）将掩膜扩展至实数域，complex Ideal Ratio Mask（cIRM）将掩膜扩展至复数域，甚至可将普通卷积模型转化为复数卷积模型。
 
 
-<center>![avatar](./img/QQ9.png)</center>
+![avatar](https://github.com/AITutorials/solutions/blob/master/img/QQ9.png)
 
 ---
 
