@@ -4,7 +4,7 @@
 随着4G的普及和5G的推出，内容消费的诉求越来越受到人们的重视。2019年互联网趋势报告指出在移动互联网行业整体增速放缓的大背景下，短视频行业异军突起，成为“行业黑洞”抢夺用户时间，尽管移动互联网人口红利见顶，新的增长点难以寻觅，但中国短视频人均使用时长及头部短视频平台日均活跃用户均持续增长。
 
 
-<center> ![pic](./img/TB1.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB1.jpeg)
 
 ---
 
@@ -31,7 +31,7 @@
 不同于抖音美拍等其他视频的内容体系从新闻、科技、金融等领域做分类划分，淘宝的视频类目体系从商品导购、产品功能展示、商品知识获取等角度出发，由行业经验丰富的运营进行设计，包含了30+一级类目和150+二级类目，其中一级类目是对视频的领域的划分，例如服饰/家居日用/美食/萌宠等，二级类目是在一级类目的基础之上对视频的子领域的划分，例如一级类目服饰下的熟女穿搭/少女穿搭/儿童服饰/中老年穿搭等，图2是视频类目体系的几个案例。在这个体系之上多媒体算法团队投入近半年的时间提出了基于模态注意力机制的多模态分层视频分类算法。
 
 
-<center> ![pic](./img/TB2.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB2.jpeg)
 
 
 ---
@@ -62,7 +62,7 @@
 
 (3) 多目标的分类器的设计  
 
-<center> ![pic](./img/TB3.jpeg "图三") </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB3.jpeg "图三") 
 
 ---
 
@@ -79,7 +79,7 @@
 视频特征序列相较于普通的图像特征包含了更加丰富的信息，不同特征之间具有时序相关性。我们采用NetVLAD(如图所示)作为视频特征的聚合网络。NetVLAD常出现在近几年国内外视频分类大赛的top方案中，以CNN的网络结构实现VLAD算法，构成了新生成的VLAD层，VLAD算法(如公式1所示)统计的是特征x和其相应的聚类中心c的残差和，a决定c是否是特征x距离最近的聚类中心。相比于Average Pooling，NetVLAD[2]可以通过聚类中心将视频序列特征转化为多个视频镜头特征，然后通过可以学习的权重对多个视频镜头加权求和获得全局特征向量。
 
 
-<center> ![pic](./img/TB4.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB4.png)
 
 ---
 
@@ -93,7 +93,7 @@
 
 (4) 商品模态：商品模态是淘宝视频区别于站外视频的标志，是体现我们的视频分类算法优势的关键所在。我们沿用文本模态的Bert模型生成商品模态的全局特征向量。商品模态在推荐领域常用item_id lookup到商品的embedding矩阵再接入下游网络，然而我们的视频分类算法是离线学习的，对于新发现的item_id不能很迅速地获得它的embedding特征，因此我们使用Bert模型提取商品的标题和类目名称的文本特征，作为商品模态的全局特征向量。
 
-<center> ![pic](./img/TB9.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB9.jpeg)
 
 
 ---
@@ -106,7 +106,7 @@
 
 (1) TFN和LMF(如图所示)都是将多模态特征映射到不同模态间外积的高维特征空间进行特征融合。TFN[6]通过模态之间的外积计算不同模态的元素之间的相关性，但会极大的增加特征向量的维度，造成模型过大，难以训练。而LMF[7]是TFN的等价形式，利用低秩矩阵的分解，将原本的各模态间的先外积再全连接变换过程，等价为各个模态先单独线性变换到输出维度，之后多个维度点积，可以看作是多个低秩向量的结果的和，LMF相比TFN减少了很多参数量，是TFN的优化版本。但在视频分类的算法中，这2种方法的效果都不及预期，分析原因在于视频分类的模态特征长度都在千维左右，即使是LMF也会出现参数数量爆炸的情况，为了保证参数量不爆炸就必须先将每个模态特征降维，然而降维本身是有损的，导致降维后的模态特征再外积不如直接利用不同模态间特征拼接。
 
-<center> ![pic](./img/TB6.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB6.jpeg)
 
 ---
 
@@ -117,7 +117,7 @@
 
 (3) 为了应对淘宝视频中出现的模态缺失情况，我们使用了modal级别的dropout，在训练的时候以一定比例随机性去除某个模态信息，增加模型对于模态缺失的鲁棒性。在不添加modal dropout时，测试数据如果缺失10%的模态信息，测试精度会下降3.5%左右；在添加了modal dropout后，测试集精度下降不到0.5%，几乎可以忽略。同时添加modal dropout后，就算模态信息不缺失的情况下，还能够提升测试集精度，提高约0.4%。
 
-<center> ![pic](./img/TB10.jpeg) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB10.jpeg)
 
 ---
 
@@ -134,7 +134,7 @@
 (2) 基于HMC分类器，我们添加了基于类别不匹配的多目标损失函数，具体公式见公式2。损失函数L由三部分构成，分别是一级类目损失L1，二级类目损失L2，以及一二级类别不匹配损失LH。一级类目损失和二级类目损失是一二级类目的交叉熵损失，能够使得网络同时学习到多模态特征与一二级类目的条件概率分布，同时能够隐形的学习到一二级类目之间的依赖关系。然而，仅仅使用一二级类目损失无法保证一二级类目之间的依赖关系，为了缓解这个问题，我们加入了类别不匹配损失，用于惩罚一二级类目不匹配的情况。参数 λ 用来控制一级类目损失和二级类目损失之间的重要性相对程度，因为二级类目数量更多，学习更加困难，需要添加更大的权重去学习。参数 β 用来调节类别不匹配损失对于总体损失函数的重要性。添加类别不匹配损失之后，一二级类目不匹配的情况大幅度下降，同时分类准确率也获得了提升。
 
 
-<center> ![pic](./img/TB7.png) </center>
+![pic](https://github.com/AITutorials/solutions/blob/master/img/TB7.png)
 
 ---
 
@@ -156,6 +156,4 @@ Google AI掌门人Jeff Dean在NeurIPS举办期间指出在2020年多模态学习
 [4] Devlin J, Chang M W, Lee K, et al. Bert: Pre-training of deep bidirectional transformers for language understanding[J]. arXiv preprint arXiv:1810.04805, 2018.  
 [5] Wang W, Bi B, Yan M, et al. StructBERT: Incorporating Language Structures into Pre-training for Deep Language Understanding[J]. arXiv preprint arXiv:1908.04577, 2019.  
 [6] Zadeh A, Chen M, Poria S, et al. Tensor fusion network for multimodal sentiment analysis[J]. arXiv preprint arXiv:1707.07250, 2017.  
-[7] Liu Z, Shen Y, Lakshminarasimhan V B, et al. Efficient low-rank multimodal fusion with modality-specific factors[J]. arXiv preprint arXiv:1806.00064, 2018.  
-[8] Wehrmann J, Cerri R, Barros R. Hierarchical multi-label classification networks[C]//International Conference on Machine Learning. 2018: 5225-5234.*
- 
+[7] Liu Z, Shen Y, Lakshminarasimhan V B, et al. Efficient low-rank multimodal fusion with modality-specific factors[J]. arXiv preprint arXiv:18
