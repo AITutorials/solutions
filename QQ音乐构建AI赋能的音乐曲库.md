@@ -9,7 +9,7 @@ QQ 音乐曲库数量庞大，怎样有效智能的管理曲库，最大化利�
 ---
 
 
-![pic](https://github.com/AITutorials/solutions/blob/master/img/QQ1.jpeg)
+![pic](http://52.83.69.131:8011/img/QQ1.jpeg)
 
 
 ---
