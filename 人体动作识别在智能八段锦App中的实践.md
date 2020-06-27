@@ -9,7 +9,7 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 ---
 
 
-![pic](https://github.com/AITutorials/solutions/blob/master/img/baduanjin.gif)
+![](http://52.83.69.131:8011/img/baduanjin.gif)
 
 
 ---
@@ -21,7 +21,7 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 “智能八段锦”这个项目的最终目标是希望可以创造一个人工智能的八段锦助手，而这个基于人工智能的助手可以帮助用户来判断他们练习的动作做的是否标准，以及对他们的八段锦动作进行打分。我们希望通过引入人工智能的相关功能，改进传统的单纯依照视频锻炼的方法。为普通的锻炼提供更多的交互性和反馈，我们也希望这些功能可以帮助老年人更加有效的练习八段锦。
 
 
-![pic](https://github.com/AITutorials/solutions/blob/master/img/baduanjin2.jpeg)
+![pic](http://52.83.69.131:8011/img/baduanjin2.jpeg)
 
 在对以上的项目需求进行分析梳理之后，我们定义了以下几个核心使用场景：
 
@@ -69,7 +69,7 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 我们采取的策略是首先利用 PoseNet 获取人体骨骼信息，然后再基于人体骨骼的序列进行具体姿势和运动类型的识别。而通过 PoseNet 获取的骨骼信息只有17个关键点的位置信息，相比较于一幅图像，其需要处理的数据已经大大减少了。下图所示即为算法的处理流程，首先我们利用PoseNet将输入的视频转换为连续的骨骼数据，然后在骨骼数据的基础上按照关键姿势进行分类。
 
 
-![pic](https://github.com/AITutorials/solutions/blob/master/img/baduanjin3.jpeg)
+![pic](http://52.83.69.131:8011/img/baduanjin3.jpeg)
 
 ---
 
@@ -78,12 +78,12 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 
 在确定策略之后，首先需要定义我们需要识别的关键姿势。于是我们将具体的姿势识别转化为一个分类问题。下图就是我们根据八段锦的教程定义的部分关键姿势。
 
-![pic](https://github.com/AITutorials/solutions/blob/master/img/baduanjin4.jpeg)
+![pic](http://52.83.69.131:8011/img/baduanjin4.jpeg)
 
 分类的算法我们采用的是传统的 DNN 网络进行计算，通过多次的调整参数和优化训练数据，最后的计算结果还算不错，在实际应用中完全符合我们的需求。
 
 
-![avatar](https://github.com/AITutorials/solutions/blob/master/img/baduanjin5.jpeg)
+![avatar](http://52.83.69.131:8011/img/baduanjin5.jpeg)
 
 ---
 
@@ -94,11 +94,11 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 正当我们致力于解决运算效率的问题的时候，TensorFlow 发布了Lite版本。TensorFlow Lite在移动平台上的效率有了重大突破。
 
 
-![avatar](https://github.com/AITutorials/solutions/blob/master/img/baduanjin6.png)
+![avatar](http://52.83.69.131:8011/img/baduanjin6.png)
 
 以下是我们在不同的移动设备上测试的运算时间:
 
-![avatar](https://github.com/AITutorials/solutions/blob/master/img/baduanjin7.png)
+![avatar](http://52.83.69.131:8011/img/baduanjin7.png)
 
 ---
 
@@ -110,7 +110,7 @@ OliveX 是一家专注于健身领域软件研发的公司，自第一款产品�
 以下是我们在调整 PoseNet 参数后在不同的移动设备上测试 Lite 和 Lite GPU 的运算时间。
 
 
-![avatar](https://github.com/AITutorials/solutions/blob/master/img/baduanjin8.png)
+![avatar](http://52.83.69.131:8011/img/baduanjin8.png)
 
 
 因为八段锦中的动作相对较慢，所以我们在使用TensorFlow Lite GPU delegate (experimental) 后，大部分市面上的手机都可以正常使用。
