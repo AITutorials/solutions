@@ -9,7 +9,7 @@
 
 [查看PDF](http://www.tisv.cn/Deep-Learning-with-PyTorch.pdf)
 
-![](https://cn.bing.com/images/search?view=detailV2&ccid=XIrg6g4Y&id=68CAEB50C73A4B8C081FABA5E435342F0A508B6A&thid=OIP.XIrg6g4Y2Zufn-D41ooRMAHaJR&mediaurl=https%3a%2f%2fimages.manning.com%2f720%2f960%2fresize%2fbook%2f2%2fa05976a-7251-47f4-a168-a84715e8b701%2fStevens-DLPy-MEAP-HI.png&exph=902&expw=720&q=deeplearning+with+pytorch&simid=607998710007991071&ck=A0B9008ABE08C486EE1F250BFAFDB33E&selectedIndex=0)
+![](https://images.manning.com/720/960/resize/book/2/a05976a-7251-47f4-a168-a84715e8b701/Stevens-DLPy-MEAP-HI.png)
 
 
 
