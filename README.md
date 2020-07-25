@@ -5,6 +5,19 @@
 
 ---
 
+## Pytorch官方推荐书籍
+
+[查看PDF](http://www.tisv.cn/Deep-Learning-with-PyTorch.pdf)
+
+![](http://www.tisv.cn/deep-learning-thumbnail.png)
+
+
+
+
+
+
+---
+
 ## 解决方案说明
 
 以下解决方案来自全球真实企业，它们将阐述项目背景与市场需求，构建AI模型或系统的每一个关键环节，包含具体的模型选择，工程策略以及阶段性可视化效果，最后还会对其进行展望，以鼓励探索更好的解决方案。
