@@ -7,7 +7,7 @@
 
 ## Pytorch官方推荐书籍
 
-【[查看PDF]】(http://www.tisv.cn/Deep-Learning-with-PyTorch.pdf)(请在PC端查看，文件较大，打开过程需要耐心等待...)
+【[查看PDF](http://www.tisv.cn/Deep-Learning-with-PyTorch.pdf)】(请在PC端查看，文件较大，打开过程需要耐心等待...)
 
 ![](https://images.manning.com/720/960/resize/book/2/a05976a-7251-47f4-a168-a84715e8b701/Stevens-DLPy-MEAP-HI.png)
 
